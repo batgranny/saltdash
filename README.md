@@ -15,6 +15,8 @@ An external job cache for your salt master [see the Saltstack documentation](htt
 
 - That's really it.
 
+<img src="screenshot.png">
+
 ## Running Saltdash
 1. Clone the [repository](https://github.com/batgranny/saltdash.git) and use [docker-compose](https://docs.docker.com/compose/):
 
