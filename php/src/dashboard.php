@@ -5,7 +5,7 @@
 include 'dbconn.php';
 
 // select query
-$sql = 'SELECT * FROM salt_returns ORDER BY jid DESC LIMIT 30';
+$sql = "SELECT * FROM salt_returns WHERE fun NOT LIKE 'runner%' ORDER BY jid DESC LIMIT 40";
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
