@@ -29,7 +29,7 @@ if ($result = $conn->query($sql)) {
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Saltdash</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
