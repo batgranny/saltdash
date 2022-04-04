@@ -1,11 +1,16 @@
 <?php
-// to use this run the docker-compose file at /Users/chrismcallister/Documents/docker
-//from a browser http://localhost 8000
-
 include 'dbconn.php';
+$searchres = $_GET['search'];
 
-// select query
-$sql = "SELECT * FROM salt_returns WHERE fun NOT LIKE 'runner%' ORDER BY jid DESC LIMIT 40";
+if ($searchres == "Success"){
+    $searchres = "0";
+}elseif ($searchres == "Fail"){
+    $searchres = "1";
+
+}
+
+$sql = "SELECT * from salt_returns WHERE id LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE fun LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE jid LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE alter_time LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE success LIKE '%".$searchres."%'
+";
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
@@ -96,12 +101,12 @@ if ($result = $conn->query($sql)) {
             </div>
           </div>
 
-          <h2 class="sub-header">Recent Jobs</h2>
+          <h3 class="sub-header">Search results for <? echo $searchres ?></h3>
           <div class="row">
             <div class="col-lg-9">
             </div>
             <div class="col-lg-3">
-            <form action="/results.php">
+            <form action="/test.php">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search Jobs..." name="search">
                 <span class="input-group-btn">

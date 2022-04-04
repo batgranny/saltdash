@@ -1,7 +1,16 @@
 <?php
 include 'dbconn.php';
+$searchres = $_GET['search'];
 
-$sql = 'SELECT * FROM salt_returns ORDER BY jid DESC';
+if ($searchres == "Success"){
+    $searchres = "0";
+}elseif ($searchres == "Fail"){
+    $searchres = "1";
+
+}
+
+$sql = "SELECT * from salt_returns WHERE id LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE fun LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE jid LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE alter_time LIKE '%".$searchres."%' UNION SELECT * from salt_returns WHERE success LIKE '%".$searchres."%'
+";
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
@@ -9,35 +18,12 @@ if ($result = $conn->query($sql)) {
     }
 }
 ?>
-<? foreach ($users as $user) :
-    echo $user->full_ret; 
-endforeach; ?>
-
-$input_line = '"__sls__": "alcali.user.present",'; 
-$input_line = '{
-    "user_|-alcali-user-present_|-alcali_|-present": {
-        "name": "alcali",
-        "changes": {},
-        "result": true,
-        "comment": "User alcali is present and up to date",
-        "__sls__": "alcali.user.present",
-        "__run_num__": 0,
-        "start_time": "10:00:15.366791",
-        "duration": 38.585,
-        "__id__": "alcali-user-present"
-    },
-    "group_|-alcali-group-present_|-alcali_|-present": {
-        "name": "alcali",
-        "changes": {},
-        "result": true,
-        "comment": "Group alcali is present and up to date",
-        "__sls__": "alcali.user.present",
-        "__run_num__": 1,
-        "start_time": "10:00:15.408277",
-        "duration": 7.566,
-        "__id__": "alcali-group-present"
-    },';
-
-preg_match('/(?<=sls__": ").*?(?=\.|")/', $input_line, $output_array);
-echo "$output_array[0]";
+<? 
+if (empty($users)){
+    echo "No result";
+}else{
+    foreach ($users as $user) :
+    echo $user->id; 
+    endforeach; 
+}
 ?>
