@@ -2,7 +2,7 @@
 
 ## What is Saltdash?
 
-Saltdash is a basic web based tool for viewing and searching an external MariaDB / MySQl **Saltstack job cache** written in PHP.
+Saltdash is a basic web based tool for viewing and searching an external MariaDB / MySQL **Saltstack job cache** written in PHP.
 
 ### Prerequisites
 An external job cache for your salt master [see the Saltstack documentation](http://https://docs.saltproject.io/en/latest/topics/jobs/external_cache.html#external-job-cache)
@@ -37,6 +37,6 @@ SALTGUI=saltguihost
 4. Connect on [http://yourhost:8000](http://yourhost:8000)
 
 ## Disclaimer
-This code is provided as is and is really just for my own use.  If you fancy using it and it doesn't work I won't be fixing it unless I need to.
+This code is provided as is and is really just for my own use. I built it using extremely rudimentary PHP skills so it's very basic.  If you fancy using it and it doesn't work I won't be fixing it.
 
 
