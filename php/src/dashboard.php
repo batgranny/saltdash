@@ -5,7 +5,7 @@
 include 'dbconn.php';
 
 // select query
-$sql = 'SELECT * FROM salt_returns ORDER BY jid DESC';
+$sql = 'SELECT * FROM salt_returns ORDER BY jid DESC LIMIT 30';
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
@@ -114,7 +114,8 @@ if ($result = $conn->query($sql)) {
               <thead>
                 <tr>
                   <th>Minion</th>
-                  <th>Command</th>
+                  <th>Module</th>
+                  <th>State</th>
                   <th>Job ID</th>
                   <th>Status</th>
                   <th>Details</th>
@@ -126,6 +127,13 @@ if ($result = $conn->query($sql)) {
                 <? if ($user->success == "0"){ echo "<tr class=\"danger\">";} else { echo "<tr>"; } ?>
                 <td><? echo $user->id; ?></td>
                 <td><? echo $user->fun; ?></td>
+
+                <?preg_match('/(?<=sls__": ").*?(?=\.|")/', $user->full_ret, $output_array);
+                if (empty($output_array)){
+                  echo "<td>None</td>";
+                }else{
+                  echo "<td>$output_array[0]</td>";
+               } ?>
                 <td><? $job = $user->jid; echo $job; ?></td>
                 <? if ($user->success > "0"){ echo "<td>success</td>";} else { echo "<td>Fail</td>"; } ?>
                 <td><a href="detail.php?job=<? echo $job; ?>&minion=<? echo $user->id; ?>"><button type="button" class="btn btn-primary btn-sm">details</button></a></td>

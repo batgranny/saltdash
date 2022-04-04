@@ -138,8 +138,9 @@ if ($result = $conn->query($sql)) {
 
           <div class="col-sm-12" style="background-color:#343a40;"> <p class="text-muted">
             <?foreach ($users as $user) :
+
               echo "<pre>"; 
-              echo json_encode(json_decode($user->return), JSON_PRETTY_PRINT); 
+              echo json_encode(json_decode($user->full_ret), JSON_PRETTY_PRINT); 
               echo "</pre>";
             endforeach; ?>
 
