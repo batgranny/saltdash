@@ -23,8 +23,18 @@ git clone https://github.com/batgranny/saltdash.git
 cd saltdash
 ```
 2. Copy the SAMPLE.env to .env (just .env don't put a name in front of the extension)
+
+```commandline
+MYUSER=user
+MYPASS=password
+MYDB=salt
+MYHOST=dbhost
+SALTGUI=saltguihost
+```
+
 3. Fill in the database connection information in the .env file
 3. Run `docker-compose up -d`
+4. Connect on [http://yourhost:8000](http://yourhost:8000)
 
 
 
