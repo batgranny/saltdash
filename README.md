@@ -16,7 +16,7 @@ An external job cache for your salt master [see the Saltstack documentation](htt
 - That's really it.
 
 ## Screenshots
-<img src="./img/screenshot.png">
+![Alt text](/img/screenshot1.png?raw=true "Optional Title")
 
 <img src="./img/screenshot2.png">
 
