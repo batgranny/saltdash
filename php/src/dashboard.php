@@ -12,6 +12,38 @@ if ($result = $conn->query($sql)) {
         $users[] = $data;
     }
 }
+
+$sql = "SELECT * FROM salt_returns WHERE success = '1'";
+if ($result2 = $conn->query($sql)) {
+    while ($data2 = $result2->fetch_object()) {
+        $users2[] = $data2;
+    }
+}
+
+if (empty($users2)){
+  $goodqs = "No data";
+}else{
+  $goodqs = count($users2);
+}
+
+$sql = "SELECT * FROM salt_returns WHERE success = '0'";
+if ($result3 = $conn->query($sql)) {
+    while ($data3 = $result3->fetch_object()) {
+        $users3[] = $data3;
+    }
+}
+
+if (empty($users3)){
+  $badqs = "No data";
+}else{
+  $badqs = count($users3);
+}
+
+if (empty($users2)){
+  $goodqs = "No data";
+}else{
+  $goodqs = count($users2);
+}
 ?>
 
 <!doctype html>
@@ -60,7 +92,7 @@ if ($result = $conn->query($sql)) {
                   <h3 class="panel-title">Successfull Queries</h3>
                 </div>
                   <div class="panel-body">
-                  <h1>135</h1>
+                  <h1><? echo "$goodqs" ?></h1>
                   </div>
             </div>
             </div>
@@ -70,7 +102,7 @@ if ($result = $conn->query($sql)) {
                   <h3 class="panel-title">Failed Queries</h3>
                 </div>
                   <div class="panel-body">
-                  <h1>25</h1>
+                  <h1><? echo "$badqs" ?></h1>
                   </div>
             </div>
             </div>
