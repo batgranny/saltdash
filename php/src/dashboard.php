@@ -1,7 +1,7 @@
 <?php
 // to use this run the docker-compose file at /Users/chrismcallister/Documents/docker
 //from a browser http://localhost 8000
-ini_set('memory_limit', '-1')
+ini_set('memory_limit', '-1');
 include 'dbconn.php';
 
 // select query
