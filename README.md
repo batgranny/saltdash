@@ -11,7 +11,7 @@ An external job cache for your salt master [see the Saltstack documentation](htt
 
 - Job search. 
 
-- It looks nice so it's better that mucking around in the Salt cli.
+- It looks nice so it's better than all that mucking around in the Salt cli.
 
 - That's really it.
 
