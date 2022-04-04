@@ -15,7 +15,7 @@ An external job cache for your salt master [see the Saltstack documentation](htt
 
 - That's really it.
 
-# Running Saltdash
+## Running Saltdash
 1. Clone the [repository](https://github.com/batgranny/saltdash.git) and use [docker-compose](https://docs.docker.com/compose/):
 
 ```commandline
@@ -36,6 +36,7 @@ SALTGUI=saltguihost
 3. Run `docker-compose up -d`
 4. Connect on [http://yourhost:8000](http://yourhost:8000)
 
-
+## Disclaimer
+This code is provided as is and is really just for my own use.  If you fancy using it and it doesn't work I won't be fixing it unless I need to.
 
 
