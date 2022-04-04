@@ -1,3 +1,4 @@
+<? $saltgui = $_ENV["SALTGUI"]; ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -30,6 +31,6 @@
             <li class="active"><a href="dashboard.php"><i class="fa-solid fa-list-ul"></i>  Jobs <span class="sr-only">(current)</span></a></li>
             <li><a href="events.php"><i class="fa-solid fa-list-check"></i></i>  Events</a></li>
             <li><a href="#"><i class="fa-solid fa-circle-info"></i>  About</a></li>
-            <li><a href="#"><i class="fa-solid fa-cube"></i>  Salt GUI</a></li>
+            <li><a href="<? echo $saltgui; ?>"><i class="fa-solid fa-cube"></i>  Salt GUI</a></li>
           </ul>
         </div>

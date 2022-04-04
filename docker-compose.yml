@@ -15,3 +15,4 @@ services:
       MYPASS: ${MYPASS}
       MYHOST: ${MYHOST}
       MYDB: ${MYDB}
+      SALTGUI: ${SALTGUI}
