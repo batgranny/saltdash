@@ -42,5 +42,4 @@ if (!empty($page)) {
             <? echo "$nav3" ?><a href="about.php"><i class="fa-solid fa-circle-info"></i>  About</a></li>
             <li><a href="<? echo $saltgui; ?>"><i class="fa-solid fa-cube"></i>  Salt GUI</a></li>
           </ul>
-          <? echo "$page and $woo" ?> 
         </div>
