@@ -1,7 +1,6 @@
 # saltdash
 
 ## What is Saltdash?
-<img align="right" height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/D20_icon.png/640px-D20_icon.png">
 Saltdash is a basic web based tool for viewing and searching an external MariaDB / MySQL **Saltstack job cache** written in PHP.
 
 ### Prerequisites
