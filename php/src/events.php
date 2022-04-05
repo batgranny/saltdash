@@ -12,6 +12,7 @@ if ($result = $conn->query($sql)) {
         $users[] = $data;
     }
 }
+
 ?>
 
 <!doctype html>
@@ -47,7 +48,8 @@ if ($result = $conn->query($sql)) {
   </head>
 
   <body>
-  <?php  include 'nav.php'; ?>
+  <?php  $page = "events";
+  include_once("nav.php");?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
