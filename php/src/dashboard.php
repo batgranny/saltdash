@@ -108,7 +108,7 @@ $baddec = round((int)$badqs / $total, 2);
             </div>
             </div>
             <div class="col-xs-6 col-sm-6 placeholder">
-            <div class="panel panel-danger">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Failed Queries</h3>
                 </div>
