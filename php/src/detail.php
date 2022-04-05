@@ -50,61 +50,17 @@ if ($result = $conn->query($sql)) {
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
   <?php  include 'nav.php'; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-      
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Failed Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>25</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-          </div>
-
           <h2 class="sub-header">Job Detail <? echo $job; ?></h2>
-
           <div class="col-sm-12" style="background-color:#343a40;"> <p class="text-muted">
             <?foreach ($users as $user) :
-
               echo "<pre>"; 
               echo json_encode(json_decode($user->full_ret), JSON_PRETTY_PRINT); 
               echo "</pre>";
             endforeach; ?>
-
         </div>
       </div>
     </div>
