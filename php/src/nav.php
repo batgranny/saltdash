@@ -12,14 +12,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>">Reload page</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>"><i class="fa-solid fa-arrows-rotate"></i>&nbsp;&nbsp;Reload page</a></li>
             <li><a href="#">Help</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>"><i class="fa-solid fa-user"></i></a></i></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+
         </div>
       </div>
     </nav>
