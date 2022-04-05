@@ -122,7 +122,7 @@ $baddec = round((int)$badqs / $total, 2);
                   </div>
             </div>
             </div>
-
+</div>
           <h2 class="sub-header">Recent Jobs</h2>
           <div class="row">
             <div class="col-lg-9">
