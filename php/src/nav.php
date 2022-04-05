@@ -1,4 +1,17 @@
-<? $saltgui = $_ENV["SALTGUI"]; ?>
+<? $saltgui = $_ENV["SALTGUI"]; 
+$nav1 = "<li>";
+$nav2 = "<li>";
+$nav3 = "<li>";
+
+if (!empty($page)) {
+  if ($page == "index"){
+    $nav1 = "<li class=\"active\">";
+  }elseif ($page == "events"){
+    $nav2 = "<li class=\"active\">";
+  }elseif ($page == "about"){
+    $nav3 == "<li class=\"active\">";
+  }
+}?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -16,7 +29,6 @@
             <li><a href="#">Help</a></li>
             <li><a href="<?php $_SERVER['PHP_SELF']; ?>"><i class="fa-solid fa-user"></i></a></i></li>
           </ul>
-
         </div>
       </div>
     </nav>
@@ -25,9 +37,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="dashboard.php"><i class="fa-solid fa-list-ul"></i>  Jobs <span class="sr-only">(current)</span></a></li>
-            <li><a href="events.php"><i class="fa-solid fa-list-check"></i></i>  Events</a></li>
-            <li><a href="#"><i class="fa-solid fa-circle-info"></i>  About</a></li>
+            <? echo "$nav1" ?><a href="index.php"><i class="fa-solid fa-list-ul"></i>  Jobs <span class="sr-only">(current)</span></a></li>
+            <? echo "$nav2" ?><a href="events.php"><i class="fa-solid fa-list-check"></i></i>  Events</a></li>
+            <? echo "$nav3" ?><a href="about.php"><i class="fa-solid fa-circle-info"></i>  About</a></li>
             <li><a href="<? echo $saltgui; ?>"><i class="fa-solid fa-cube"></i>  Salt GUI</a></li>
           </ul>
+          <? echo "$page and $woo" ?> 
         </div>

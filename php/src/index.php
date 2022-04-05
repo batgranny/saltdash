@@ -50,6 +50,7 @@ if (empty($users2)){
 $total = (int)$goodqs + (int)$badqs;
 $gooddec = round((int)$goodqs / $total, 2);
 $baddec = round((int)$badqs / $total, 2);
+$page = "index";
 ?>
 
 <!doctype html>
