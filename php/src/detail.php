@@ -53,8 +53,20 @@ if ($result = $conn->query($sql)) {
   <body>
   <?php  include 'nav.php'; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          <h2 class="sub-header">Job Detail <? echo $job; ?></h2>
+          <h1 class="sub-header">Job Detail</h1>
+          <dl class="row">
+            <dt class="col-sm-2">Minion ID:</dt>
+            <dd class="col-sm-10"><? echo "$minion"?></dd>
+            <dt class="col-sm-2">State:</dt>
+            <dd class="col-sm-10">IRM</dd>
+            <dt class="col-sm-2">Time:</dt>
+            <dd class="col-sm-10">10:25</dd>
+            <dt class="col-sm-2">JID:</dt>
+            <dd class="col-sm-10"><? echo $job; ?></dd>
+            <dt class="col-sm-2">Result:</dt>
+            <dd class="col-sm-10"><p class="text-success">Success</p></dd>
+          </dl>
+          <h2 class="sub-header">Return Result</h2>
           <div class="col-sm-12" style="background-color:#343a40;"> <p class="text-muted">
             <?foreach ($users as $user) :
               echo "<pre>"; 

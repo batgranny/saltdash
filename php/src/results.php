@@ -59,47 +59,6 @@ if ($result = $conn->query($sql)) {
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Failed Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>25</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
           </div>
 
           <h3 class="sub-header">Search results for <? echo $searchres ?></h3>
