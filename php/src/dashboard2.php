@@ -4,12 +4,7 @@ include 'dbconn.php';
 //from a browser http://localhost 8000
 ini_set('memory_limit', '-1');
 
-$goodf = 1720;
-$badf = 1000;
-$total = $goodf + $badf;
-$good = round($goodf / $total, 2);
-$bad = round($badf / $total, 2);
-
+  
 // select query
 $sql = "SELECT * FROM salt_returns WHERE fun NOT LIKE 'runner%' ORDER BY jid DESC LIMIT 40";
 
@@ -50,6 +45,11 @@ if (empty($users2)){
 }else{
   $goodqs = count($users2);
 }
+
+//Gauge stuff
+$total = (int)$goodqs + (int)$badqs;
+$gooddec = round((int)$goodqs / $total, 2);
+$baddec = round((int)$badqs / $total, 2);
 ?>
 
 <!doctype html>
@@ -64,7 +64,7 @@ if (empty($users2)){
     <link rel="icon" href="../../favicon.ico">
 
     <title>Saltdash</title>
-    <link href="css/gauge.css" rel="stylesheet">
+    <link href="/css/gauge.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -92,52 +92,36 @@ if (empty($users2)){
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <div class="panel panel-success">
+            <div class="col-xs-6 col-sm-6 placeholder">
+              <div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Successfull Queries</h3>
                 </div>
                   <div class="panel-body">
                   <div class="gauge">
-                  <div class="gauge__body">
-                  <div class="gauge__fill"></div>
-                  <div class="gauge__cover"></div>
-                </div>
-              </div>
+  <div class="gauge__body">
+    <div class="gauge__fill"></div>
+    <div class="gauge__cover"></div>
+  </div>
+</div>
+                  </div>
             </div>
             </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="col-xs-6 col-sm-6 placeholder">
             <div class="panel panel-danger">
                 <div class="panel-heading">
                   <h3 class="panel-title">Failed Queries</h3>
                 </div>
                   <div class="panel-body">
-                  <h1><? echo "$badqs" ?></h1>
+                  <div class="gauge2">
+  <div class="gauge__body2">
+    <div class="gauge__fill2"></div>
+    <div class="gauge__cover2"></div>
+  </div>
+</div>
                   </div>
             </div>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
-                </div>
-                  <div class="panel-body">
-                  <h1>135</h1>
-                  </div>
-            </div>
-            </div>
-          </div>
 
           <h2 class="sub-header">Recent Jobs</h2>
           <div class="row">
@@ -195,25 +179,39 @@ if (empty($users2)){
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
     <script>
-const gaugeElement = document.querySelector(".gauge");
-const gaugeElement2 = document.querySelector(".gauge");
+      const gaugeElement = document.querySelector(".gauge");
 
 function setGaugeValue(gauge, value) {
   if (value < 0 || value > 1) {
     return;
   }
-    gauge.querySelector(".gauge__fill").style.transform = `rotate(${value / 2}turn)`;
-    gauge.querySelector(".gauge__cover").textContent = `<? echo "$goodf" ?>`;
+
+  gauge.querySelector(".gauge__fill").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge.querySelector(".gauge__cover").textContent = `<? echo "$gooddec" ?>`;
 }
 
-setGaugeValue(gaugeElement, <? echo "$good" ?>);
-setGaugeValue(gaugeElement2, <? echo "$bad" ?>);
-</script>
-      
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+const gaugeElement2 = document.querySelector(".gauge2");
+
+function setGaugeValue2(gauge2, value) {
+  if (value < 0 || value > 1) {
+    return;
+  }
+
+  gauge2.querySelector(".gauge__fill2").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge2.querySelector(".gauge__cover2").textContent = `<? echo "$baddec" ?>`;
+}
+
+setGaugeValue(gaugeElement, <? echo "$gooddec" ?>);
+setGaugeValue2(gaugeElement2, <? echo "$baddec" ?>);
+    </script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../../assets/js/vendor/holder.min.js"></script>
     <script src="https://kit.fontawesome.com/f8c057d86e.js" crossorigin="anonymous"></script>
