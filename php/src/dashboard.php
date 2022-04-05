@@ -95,7 +95,7 @@ $baddec = round((int)$badqs / $total, 2);
             <div class="col-xs-6 col-sm-6 placeholder">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Successfull Queries</h3>
+                  <h3 class="panel-title">Successfull Jobs</h3>
                 </div>
                   <div class="panel-body">
                   <div class="gauge">
@@ -110,7 +110,7 @@ $baddec = round((int)$badqs / $total, 2);
             <div class="col-xs-6 col-sm-6 placeholder">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Failed Queries</h3>
+                  <h3 class="panel-title">Failed Jobs</h3>
                 </div>
                   <div class="panel-body">
                   <div class="gauge2">
