@@ -1,9 +1,10 @@
 <?php
+include 'dbconn.php';
 // to use this run the docker-compose file at /Users/chrismcallister/Documents/docker
 //from a browser http://localhost 8000
 ini_set('memory_limit', '-1');
-include 'dbconn.php';
 
+  
 // select query
 $sql = "SELECT * FROM salt_returns WHERE fun NOT LIKE 'runner%' ORDER BY jid DESC LIMIT 40";
 
@@ -66,7 +67,7 @@ if (empty($users2)){
     <link href="bootstrap/" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="bootstrap/docs/examples/dashboard/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
